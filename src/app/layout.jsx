@@ -1,18 +1,23 @@
 import Header from "@/components/Header";
 import "./globals.css";
+import Providers from "./Providers";
 
+// layout.jsx→Header.jsx→DarkModeSwitch.jsxのように孫に渡しているためchildrenを使う
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head />
       <body>
-        {/* Header */}
-        <Header />
+        {/* Providersフォルダは他のとこからimportしている */}
+        <Providers>
+          {/* Header */}
+          <Header />
 
-        {/* Navbar */}
+          {/* Navbar */}
 
-        {/* SearchBox */}
-        {children}
+          {/* SearchBox */}
+          {children}
+        </Providers>
       </body>
     </html>
   );
