@@ -7,10 +7,12 @@ import { useTheme } from "next-themes";
 export default function DarkModeSwitch() {
   const { systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  // これの存在意義は？
   useEffect(() => setMounted(true), []);
   const currentTheme = theme === "system" ? systemTheme : theme;
   return (
     <>
+    {/* trueになったらページがレンダーされたということ */}
       {mounted &&
         (currentTheme === "dark" ? (
           <MdLightMode
